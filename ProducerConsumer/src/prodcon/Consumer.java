@@ -1,5 +1,3 @@
-package prodcon;
-
 class Consumer extends Thread {
 	// Referência para buffer compartilhado
 	Buffer buffer;

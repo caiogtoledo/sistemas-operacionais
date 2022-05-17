@@ -1,5 +1,3 @@
-package prodcon;
-
 import java.util.Random;
 
 class Producer extends Thread {

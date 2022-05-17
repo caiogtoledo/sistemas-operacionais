@@ -1,5 +1,3 @@
-package prodcon;
-
 // Adaptado de https://javarevisited.blogspot.com/2015/06/java-lock-and-condition-example-producer-consumer.html
 public class Main {
 
