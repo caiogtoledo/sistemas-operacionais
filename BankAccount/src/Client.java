@@ -1,15 +1,11 @@
 import java.util.Random;
-// import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 
 public class Client extends Thread{
     private Account account;
     private String name;
 
-    // Variável de lock para acessar a fila compartilhada
-	private final Lock lock = new ReentrantLock();
+    
 
     Buffer buffer;
     private int values[] = {10, 20, 50, 100};
@@ -39,15 +35,12 @@ public class Client extends Thread{
 
         
 
-        // lock.lock();
         if(choice % 2 == 0){
             account.deposit(values[randomIndex], name);
         }else{
             account.withdraw(values[randomIndex], name);
         }
 
-        // lock.unlock();
-     
     }
 
     @Override
@@ -55,9 +48,7 @@ public class Client extends Thread{
 		try {
 			// Tenta consumir um número inteiro
 			while (true) {
-                lock.lock();
                 execute();
-                lock.unlock();
 				// Dorme 200 ms
 				Thread.sleep(1000);
 				// Ou comente a linha anterior e
