@@ -1,8 +1,11 @@
 import java.util.Random;
 
+
 public class Client extends Thread{
     private Account account;
     private String name;
+
+    
 
     Buffer buffer;
     private int values[] = {10, 20, 50, 100};
@@ -30,12 +33,14 @@ public class Client extends Thread{
         Random random2 = new Random();
         int randomIndex = random2.nextInt(4);
 
+        
+
         if(choice % 2 == 0){
             account.deposit(values[randomIndex], name);
         }else{
             account.withdraw(values[randomIndex], name);
         }
-     
+
     }
 
     @Override
